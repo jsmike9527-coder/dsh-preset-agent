@@ -1,0 +1,73 @@
+{
+  "name": "dsh-mode-exchange",
+  "version": "0.1.10",
+  "private": false,
+  "license": "MIT",
+  "description": "在已存在的 DSH 会话中切换 Agent 模式（软切换），以及按目标模式迁移重建会话（真导入原生消息序列）。",
+  "keywords": [
+    "dsh",
+    "dsh-bundle",
+    "agent-preset",
+    "session-migration"
+  ],
+  "homepage": "https://github.com/dasuda13/dsh-mode-exchange#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dasuda13/dsh-mode-exchange.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dasuda13/dsh-mode-exchange/issues"
+  },
+  "author": "dasuda13",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./src/client/bundle.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./assets/icon.png",
+    "./icon.svg": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "types",
+    "locale",
+    "docs/DETAIL.md",
+    "docs/DETAIL.en.md",
+    "docs/LOCAL-DEV.md",
+    "docs/market",
+    "cordis.patch.yml",
+    "icon.svg",
+    "assets",
+    "screenshots.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "icon": "./assets/icon.png",
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "check": "node scripts/build-client.mjs --check",
+    "test": "node scripts/smoke-render.mjs",
+    "smoke": "node scripts/smoke-imports.mjs && node scripts/smoke-inject.mjs && node scripts/smoke-apply.mjs && node scripts/smoke-host.mjs && node scripts/smoke-seed.mjs && node scripts/smoke-migrate.mjs && node scripts/smoke-menu.mjs && node scripts/smoke-handoff.mjs && node scripts/smoke-render.mjs",
+    "probe": "node scripts/probe.js --print"
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.3 <0.3.0",
+    "node": ">=22"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}

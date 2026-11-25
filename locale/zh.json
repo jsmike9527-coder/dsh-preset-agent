@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "Agent 身份",
+    "description": "按会话选择具名 Agent 身份：身份设定会注入系统提示词，并排在项目指令之前；可创建任意多个身份，也可以把任务派给某个身份执行。"
+  },
+  "ui": {
+    "label": "身份",
+    "native": "原生（无身份）",
+    "settingsTitle": "Agent 身份"
+  }
+}

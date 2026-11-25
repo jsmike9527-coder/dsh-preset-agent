@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Mode Exchange",
+    "description": "Soft-switch the Agent mode of the current session (prompt layer plus tool-dispatch interception), or rebuild a session in another mode: export the log, create a session with the target preset, import the native event sequence, and optionally archive the old session and enable Agent Teams.",
+    "detail": "docs/DETAIL.en.md"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "title": "Agent Identity",
+    "description": "Pick a named agent identity per session. Its body is injected into the system prompt ahead of project instructions; manage as many identities as you need and delegate work to them."
+  },
+  "ui": {
+    "label": "Identity",
+    "native": "Native (no identity)",
+    "settingsTitle": "Agent identities"
+  }
+}

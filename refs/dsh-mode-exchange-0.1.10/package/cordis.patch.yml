@@ -1,0 +1,16 @@
+# dsh-mode-exchange bundle patch
+#
+# 只声明「本 bundle 要往 profile 里插入哪一行插件」。
+# 插件自身的一切可配置项都写在 config 里，并由宿主通过 configEditor 持久化到
+# profile 的 cordis.patch.yml；插件代码永远不直接读写那个文件。
+- insert:
+    - id: mode-exchange
+      name: dsh-mode-exchange
+      config:
+        defaultMode: ''
+        deleteOldSession: true
+        enableTeam: false
+        exportDir: ''
+        keepExportCopy: true
+        confirmBeforeMigrate: true
+        autoOpenTarget: true
